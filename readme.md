@@ -39,11 +39,15 @@ Flask is a lightweight web development framework that enables the creation of co
     ```
 
 ### Running the Application
-1. Run the Flask application:
+1. change directory to the right one:
+   ```sh
+   cd (right-directory)
+   ```
+2. Run the Flask application:
     ```sh
     python app.py
     ```
-2. Open your browser and navigate to `http://127.0.0.1:5000` to see the application in action.
+3. Open your browser and navigate to `http://127.0.0.1:5000` to see the application in action.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
