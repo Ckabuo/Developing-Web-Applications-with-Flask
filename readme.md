@@ -25,8 +25,8 @@ Flask is a lightweight web development framework that enables the creation of co
 ### Installation
 1. Clone this repository:
     ```sh
-    git clone https://github.com/Ckabuo/introduction-to-flask.git
-    cd introduction-to-flask
+    git clone https://github.com/Ckabuo/Developing-Web-Applications-with-Flask.git
+    cd Developing-Web-Applications-with-Flask
     ```
 2. Create and activate a virtual environment:
     ```sh
