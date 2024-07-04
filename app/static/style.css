@@ -1,0 +1,162 @@
+* {
+    font-family: 'Poppins', sans-serif; /* Set the font family for all elements */
+    color: white; /* Set the text color to white for all elements */
+}
+
+body {
+    display: flex; /* Use flexbox for the layout */
+    flex-direction: column; /* Arrange child elements in a column */
+    background-color: #121212; /* Set the background color */
+    padding: 0px; /* Remove default padding */
+    margin: 0px; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+}
+
+.purple {
+    color: #4361ee; /* Set text color to a shade of purple */
+}
+
+.navbar {
+    background-color: #121212; /* Set background color */
+    padding: 0px; /* Remove default padding */
+    margin: 0px; /* Remove default margin */
+    position: sticky; /* Make the navbar sticky */
+    top: 0px; /* Stick to the top of the viewport */
+    z-index: 1; /* Ensure it stays on top of other elements */
+    padding: 0px 0px; /* Additional padding, might be redundant */
+}
+
+.flex {
+    display: flex; /* Apply flexbox to the element */
+}
+
+.row {
+    flex-direction: row; /* Arrange child elements in a row */
+}
+
+.column {
+    flex-direction: column; /* Arrange child elements in a column */
+}
+
+.jsplit {
+    justify-content: space-between; /* Distribute items evenly with space between them */
+}
+
+.gap {
+    gap: 10px; /* Set gap between child elements */
+}
+
+.container {
+    width: calc(100% - 40px); /* Calculate width with padding considered */
+    max-width: 1200px; /* Max width for the container */
+    margin: auto; /* Center the container */
+    padding: 20px 20px; /* Padding inside the container */
+}
+
+.products {
+    display: flex; /* Apply flexbox */
+    flex-direction: row; /* Arrange products in a row */
+    flex-wrap: wrap; /* Wrap products to the next line */
+    justify-content: flex-start; /* Align products to the start */
+    gap: 10px; /* Gap between products */
+}
+
+.product {
+    display: flex; /* Apply flexbox */
+    flex-direction: column; /* Arrange elements in a column */
+    align-items: flex-start; /* Align items to the start */
+    background-color: #222222; /* Background color for product */
+    padding: 20px; /* Padding inside product div */
+    border-radius: 5px; /* Rounded corners */
+    /* flex-grow: 1; */ /* Uncomment to allow item to grow */
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 300px; /* Fixed width */
+}
+
+.light {
+    opacity: 0.5; /* Set lower opacity for light effect */
+}
+
+.center {
+    display: flex; /* Apply flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+}
+
+.align-center {
+    align-items: center; /* Center items vertically in flex container */
+}
+
+.justify-center {
+    justify-content: center; /* Center items horizontally in flex container */
+}
+
+.justify-split {
+    justify-content: space-between; /* Distribute items evenly with space between them */
+}
+
+.fill-height {
+    flex-grow: 1; /* Make item grow to fill available height */
+}
+
+.fill-width {
+    width: 100%; /* Set width to 100% */
+}
+
+.box {
+    background-color: #222222; /* Background color for box */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside box */
+}
+
+.gap-10 {
+    gap: 10px; /* Set gap between child elements */
+}
+
+input {
+    background-color: #161616a6; /* Background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside input */
+    color: white; /* Text color */
+    outline: none; /* Remove outline */
+    min-width: 300px; /* Minimum width */
+}
+
+button {
+    background-color: #4361ee; /* Background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside button */
+    color: white; /* Text color */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+textarea {
+    background-color: #161616a6; /* Background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside textarea */
+    color: white; /* Text color */
+    outline: none; /* Remove outline */
+    min-width: 300px; /* Minimum width */
+    min-height: 100px; /* Minimum height */
+}
+
+.aButton {
+    background-color: #4361ee; /* Background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside button */
+    color: white; /* Text color */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-decoration: none; /* Remove text underline */
+    width: fit-content; /* Fit width to content */
+}
+
+.warning {
+    background-color: #ee4361; /* Warning background color */
+}

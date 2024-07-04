@@ -1,0 +1,4 @@
+Flask  # A micro web framework written in Python
+Flask-SQLAlchemy  # An extension for Flask that adds support for SQLAlchemy
+sqlalchemy  # The SQL toolkit and Object-Relational Mapping (ORM) library for Python
+flask-login  # A Flask extension that provides user session management

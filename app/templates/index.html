@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the web page displaying shop name -->
+    <title>{{shopname}}</title>
+    <!-- Linking the external CSS file for styling -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <!-- Preconnecting to Google Fonts for faster retrieval -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Including the Poppins font family from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <!-- Shop logo or name -->
+                <div class="logo">
+                    <a href="/">{{shopname}}</a>
+                </div>
+                <!-- User authentication links -->
+                <div class="flex row gap align-center">
+                    {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% else %}
+                        <span class="light">Logged in as {{user.username}}</span>
+                        <a href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main container for content -->
+    <div class="container">
+        <div class="content flex column gap-10">
+            <!-- Admin section title -->
+            <h1 class="purple">{{shopname}} Admin</h1>
+            <!-- Link to add a new product -->
+            <a href="/product/add" class="aButton">Add Product</a>
+            <!-- List of products -->
+            <div class="products">
+                {% for product in products %}
+                    <div class="product">
+                        <!-- Product title -->
+                        <h2>{{product.title}}</h2>
+                        <!-- Product description -->
+                        <p>{{product.description}}</p>
+                        <!-- Product author -->
+                        <p class="light">{{product.author}}</p>
+                        <!-- Links for viewing and deleting the product -->
+                        <div class="flex row justify-split align-center fill-width">
+                            <a href="/product/{{product.id}}" class="aButton">View</a>
+                            <a href="/product/delete/{{product.id}}" class="aButton warning">Delete</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

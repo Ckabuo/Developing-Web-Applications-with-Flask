@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Set the title of the webpage to the shop's name -->
+    <title>{{shopname}}</title>
+
+    <!-- Link to the external CSS stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+    <!-- Preconnect to Google's font service for improved loading performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Import the Poppins font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <div class="logo">
+                    <!-- Link to the homepage displaying the shop's name -->
+                    <a href="/">{{shopname}}</a>
+                </div>
+                <div class="flex row gap align-center">
+                    <!-- Display login and register links if the user is not logged in -->
+                    {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% else %}
+                        <!-- Show the logged-in user's name and a logout link if the user is logged in -->
+                        <span class="light">Logged in as {{user.username}}</span>
+                        <a href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container center fill-height">
+        <div class="content">
+            <div class="box flex column">
+                <!-- Register heading -->
+                <h1 class="purple">Register</h1>
+
+                <!-- Registration form -->
+                <form action="/register" method="POST" class="flex column gap-10">
+                    <!-- Username input field -->
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username">
+
+                    <!-- Email input field -->
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="Email">
+
+                    <!-- Password input field -->
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+
+                    <!-- Submit button -->
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

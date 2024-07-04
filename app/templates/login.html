@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page title, dynamically set to the shop name -->
+    <title>{{shopname}}</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <!-- Preconnecting to Google's font service for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importing Poppins font family from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <!-- Shop logo linking back to home -->
+                <div class="logo">
+                    <a href="/">{{shopname}}</a>
+                </div>
+                <div class="flex row gap align-center">
+                    <!-- Condition to check if user is not logged in -->
+                    {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% else %}
+                        <!-- Display username if user is logged in -->
+                        <span class="light">Logged in as {{user.username}}</span>
+                        <a href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main container with centered content -->
+    <div class="container center fill-height">
+        <div class="content">
+            <div class="box flex column">
+                <!-- Login form title -->
+                <h1 class="purple">Login</h1>
+                <!-- Login form -->
+                <form action="/login" method="POST" class="flex column gap-10">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" placeholder="Username">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                    <!-- Error message display -->
+                    {% if error %}
+                        <p class="error">{{error}}</p>
+                    {% endif %}
+                    <!-- Success message display -->
+                    {% if success %}
+                        <p class="success">{{success}}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title of the document, dynamically set to the shop's name -->
+    <title>{{shopname}}</title>
+    <!-- Linking to the external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <!-- Preconnecting to Google Fonts service for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Linking to the Poppins font family from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar section -->
+    <div class="navbar">
+        <div class="container">
+            <div class="flex row jsplit">
+                <!-- Logo with a link to the home page, dynamically set to the shop's name -->
+                <div class="logo">
+                    <a href="/">{{shopname}}</a>
+                </div>
+                <!-- Conditional rendering for login/logout/register based on user's login status -->
+                <div class="flex row gap align-center">
+                    {% if not user.username %}
+                        <a href="/login">Login</a>
+                        <a href="/register">Register</a>
+                    {% else %}
+                        <span class="light">Logged in as {{user.username}}</span>
+                        <a href="/logout">Logout</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fill-height">
+        <div class="content">
+            <!-- Form container for product update -->
+            <div class="box flex column">
+                <h1 class="purple">Product</h1>
+                <!-- Update product form, dynamically populated with existing product details -->
+                <form action="/product/update/{{product.id}}" method="POST" class="flex column gap-10">
+                    <!-- Product name input field -->
+                    <label for="title">Name</label>
+                    <input type="text" name="title" placeholder="Name" value="{{product.title}}">
+                    <!-- Product category input field -->
+                    <label for="category">Category</label>
+                    <input type="text" name="category" placeholder="Category" value="{{product.category}}">
+                    <!-- Product description input field -->
+                    <label for="description">Description</label>
+                    <textarea name="description" placeholder="Description">{{product.description}}</textarea>
+                    <!-- Product price input field -->
+                    <label for="price">Price</label>
+                    <input type="number" name="price" placeholder="Price" value="{{product.price}}">
+                    <!-- Product image URL input field -->
+                    <label for="image">Image</label>
+                    <input type="text" name="image" placeholder="Image" value="{{product.image}}">
+                    <!-- Form submission button -->
+                    <button type="submit">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
